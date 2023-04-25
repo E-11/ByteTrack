@@ -207,6 +207,7 @@ class Trainer:
             self.ema_model.update_attr(self.model)
 
         self.save_ckpt(ckpt_name="latest")
+        # self.save_ckpt(ckpt_name=str(self.epoch+1))  # ljp
 
         if (self.epoch + 1) % self.exp.eval_interval == 0:
             all_reduce_norm(self.model)

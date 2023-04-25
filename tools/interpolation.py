@@ -14,6 +14,7 @@ def mkdir_if_missing(d):
 def eval_mota(data_root, txt_path):
     accs = []
     seqs = sorted([s for s in os.listdir(data_root) if s.endswith('FRCNN')])
+    # seqs = sorted([s for s in os.listdir(data_root)])
     #seqs = sorted([s for s in os.listdir(data_root)])
     for seq in seqs:
         video_out_path = os.path.join(txt_path, seq + '.txt')
@@ -115,9 +116,9 @@ def dti(txt_path, save_path, n_min=25, n_dti=20):
 
 
 if __name__ == '__main__':
-    data_root = '/opt/tiger/demo/ByteTrack/datasets/mot/test'
-    txt_path = '/opt/tiger/demo/ByteTrack/YOLOX_outputs/yolox_x_mix_det/track_results'
-    save_path = '/opt/tiger/demo/ByteTrack/YOLOX_outputs/yolox_x_mix_det/track_results_dti'
+    data_root = '/home/ByteTrack/datasets/MOT20/test'
+    txt_path = '/home/ByteTrack/YOLOX_outputs/yolox_x_mix_mot20_ch/track_results'
+    save_path = '/home/ByteTrack/YOLOX_outputs/yolox_x_mix_det/track_results_dti'
     
     mkdir_if_missing(save_path)
     dti(txt_path, save_path, n_min=5, n_dti=20)
