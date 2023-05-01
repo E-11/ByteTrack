@@ -140,6 +140,5 @@ events.out.tfevents*
 pretrained
 YOLOX_outputs
 
-*.gif
-*.png
-*.train
+assets/
+datasets/
